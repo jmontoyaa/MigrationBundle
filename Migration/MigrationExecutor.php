@@ -112,7 +112,8 @@ class MigrationExecutor
             $fromSchema = $toSchema;
             $queryBag->clear();
 
-            $this->logger->notice(sprintf('> %s', get_class($migration)));
+            //$this->logger->notice(sprintf('> %s', get_class($migration)));
+
             foreach ($queries as $query) {
                 $this->queryExecutor->execute($query, $dryRun);
             }

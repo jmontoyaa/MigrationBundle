@@ -58,15 +58,15 @@ class MigrationQueryExecutor
                 $query->setConnection($this->connection);
             }
             if ($dryRun) {
-                $descriptions = $query->getDescription();
+                /*$descriptions = $query->getDescription();
                 foreach ((array)$descriptions as $description) {
                     $this->logger->notice($description);
-                }
+                }*/
             } else {
                 $query->execute($this->logger);
             }
         } else {
-            $this->logger->notice($query);
+            //$this->logger->notice($query);
             if (!$dryRun) {
                 $this->connection->executeQuery($query);
             }
