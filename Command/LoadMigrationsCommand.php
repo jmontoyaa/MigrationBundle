@@ -7,7 +7,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use Oro\Component\Log\OutputLogger;
+//use Oro\Component\Log\OutputLogger;
+use Psr\Log\AbstractLogger as OutputLogger;
 
 use Oro\Bundle\MigrationBundle\Migration\Loader\MigrationsLoader;
 use Oro\Bundle\MigrationBundle\Migration\MigrationExecutor;
@@ -80,7 +81,7 @@ class LoadMigrationsCommand extends ContainerAwareCommand
                         '    '
                     );
                     $executor    = $this->getMigrationExecutor($input);
-                    $executor->setLogger($logger);
+                    //$executor->setLogger($logger);
                     $executor->getQueryExecutor()->setLogger($queryLogger);
                     $executor->executeUp($migrations, $input->getOption('dry-run'));
                 }
