@@ -8,7 +8,6 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 //use Oro\Component\Log\OutputLogger;
-use Psr\Log\AbstractLogger as OutputLogger;
 
 use Oro\Bundle\MigrationBundle\Migration\Loader\MigrationsLoader;
 use Oro\Bundle\MigrationBundle\Migration\MigrationExecutor;
@@ -73,16 +72,16 @@ class LoadMigrationsCommand extends ContainerAwareCommand
                         $output->writeln(sprintf('  <comment>> %s</comment>', get_class($migration)));
                     }
                 } else {
-                    $logger      = new OutputLogger($output, true, null, '  ');
+                    /*$logger      = new OutputLogger($output, true, null, '  ');
                     $queryLogger = new OutputLogger(
                         $output,
                         true,
                         $input->getOption('show-queries') ? null : OutputInterface::VERBOSITY_QUIET,
                         '    '
-                    );
+                    );*/
                     $executor    = $this->getMigrationExecutor($input);
                     //$executor->setLogger($logger);
-                    $executor->getQueryExecutor()->setLogger($queryLogger);
+                    //$executor->getQueryExecutor()->setLogger($queryLogger);
                     $executor->executeUp($migrations, $input->getOption('dry-run'));
                 }
             }
