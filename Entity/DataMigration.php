@@ -5,7 +5,7 @@ namespace Oro\Bundle\MigrationBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table("oro_migrations", indexes={
+ * @ORM\Table("migrations", indexes={
  *     @ORM\Index(name="idx_oro_migrations", columns={"bundle"})
  * })
  * @ORM\Entity()

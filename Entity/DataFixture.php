@@ -5,7 +5,7 @@ namespace Oro\Bundle\MigrationBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table("oro_migrations_data")
+ * @ORM\Table("migrations_data")
  * @ORM\Entity()
  */
 class DataFixture
