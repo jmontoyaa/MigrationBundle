@@ -59,8 +59,8 @@ class LoadDataFixturesCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $indexListener = $this->getContainer()->get('oro_search.index_listener');
-        $indexListener->disablePostFlush();
+        /*$indexListener = $this->getContainer()->get('oro_search.index_listener');
+        $indexListener->disablePostFlush();*/
 
         $fixtures = null;
         try {
