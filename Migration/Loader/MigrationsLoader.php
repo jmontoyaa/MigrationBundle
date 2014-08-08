@@ -74,7 +74,7 @@ class MigrationsLoader
         KernelInterface $kernel,
         Connection $connection,
         ContainerInterface $container,
-        EventDispatcher $eventDispatcher
+        EventDispatcherInterface $eventDispatcher
     ) {
         $this->kernel          = $kernel;
         $this->connection      = $connection;
