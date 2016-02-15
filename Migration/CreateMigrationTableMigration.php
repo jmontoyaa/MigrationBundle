@@ -6,7 +6,7 @@ use Doctrine\DBAL\Schema\Schema;
 
 class CreateMigrationTableMigration implements Migration
 {
-    const MIGRATION_TABLE = 'oro_migrations';
+    const MIGRATION_TABLE = 'migrations';
 
     /**
      * @inheritdoc
