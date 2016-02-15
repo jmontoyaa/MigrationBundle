@@ -41,4 +41,76 @@ class DataMigration
      * @ORM\Column(name="loaded_at", type="datetime")
      */
     protected $loadedAt;
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     * @return DataMigration
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBundle()
+    {
+        return $this->bundle;
+    }
+
+    /**
+     * @param string $bundle
+     * @return DataMigration
+     */
+    public function setBundle($bundle)
+    {
+        $this->bundle = $bundle;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * @param string $version
+     * @return DataMigration
+     */
+    public function setVersion($version)
+    {
+        $this->version = $version;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getLoadedAt()
+    {
+        return $this->loadedAt;
+    }
+
+    /**
+     * @param \DateTime $loadedAt
+     * @return DataMigration
+     */
+    public function setLoadedAt($loadedAt)
+    {
+        $this->loadedAt = $loadedAt;
+        return $this;
+    }
 }
