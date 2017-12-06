@@ -43,7 +43,10 @@ class SchemaDumperExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'oro_migration_get_schema_column_options' => new \Twig_Function_Method($this, 'getColumnOptions'),
+            'oro_migration_get_schema_column_options' => new \Twig_SimpleFunction(
+                'getColumnOptions',
+                [$this, 'getColumnOptions']
+            ),
         );
     }
 
